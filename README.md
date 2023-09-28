@@ -2,6 +2,8 @@
 
 Welcome to the Idea Factory website, designed to assist you in discovering novel research questions and ideas. This guide will walk you through the various components of the website and provide instructions on how to use them effectively.
 
+---
+
 ### User Interface Overview:
 
 1. Settings: Choose the number of research papers to fetch from the database (default 20, up to 100) and the number of papers for the literature review and research questions generation (default 8, up to 25).
@@ -27,6 +29,8 @@ Welcome to the Idea Factory website, designed to assist you in discovering novel
 5.5  Relevance: Gauge the relevance of the idea to the input prompt on a scale of 1 to 5, where 5 denotes "Extremely Relevant" and 1 signifies "Extremely Irrelevant”.
 
 6. Recommendations (Optional): You have the option to provide any additional recommendations or comments related to the generated research questions or the website's functionality.
+
+---
 
 ### Prompt Guidelines:
 
