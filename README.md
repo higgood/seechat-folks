@@ -18,15 +18,15 @@ Welcome to the Idea Factory website, designed to assist you in discovering novel
 
 6. Feedback Section: Your valuable feedback is crucial for the improvement of our system. This section includes optional questions about your background and specific evaluations of the generated research questions. Human Evaluation for Research Questions: Evaluate each of the five generated research questions using the following criteria:
    
-   6.1 Familiarity:  Rate your familiarity with the area of the research question on a scale of 1 to 5, where 5 signifies "Extremely Familiar" and 1 denotes "Extremely Non-Familiar”.
+   6.1 Familiarity:  Rate your familiarity with the area of the research question on a scale of 1 to 5, labeled by "Unfamiliar", "Slightly Unfamiliar", "Neutral", "Slightly Familiar", and "Familiar".
 
-   6.2 Understandability: Evaluate how understandable the idea presented in the research question is on a scale of 1 to 5, where 5 indicates "Extremely Understandable" and 1 implies "Extremely Nonsense”.
+   6.2 Understandability: Evaluate how understandable the idea presented in the research question is on a scale of 1 to 5, labeled by "Nonsense", "Slightly Nonsense", "Neutral", "Slightly Understandable", and "Understandable".
 
-   6.3 Actionability: Assess the actionability of the idea on a scale of 1 to 5, where 5 represents "Extremely Actionable" and 1 signifies "Extremely Abstract”.
+   6.3 Actionability: Assess the actionability of the idea on a scale of 1 to 5, labeled by "Abstract", "Slightly Abstract", "Neutral", "Slightly Actionable", and "Actionable".
 
-   6.4 Innovativeness: Determine the innovativeness of the idea on a scale of 1 to 5, where 5 reflects "Extremely Innovative" and 1 indicates "Extremely Obvious”.
+   6.4 Innovativeness: Determine the innovativeness of the idea on a scale of 1 to 5, labeled by "Obvious", "Slightly Obivous", "Neutral", "Slightly Innovative", and "Innovative".
 
-   6.5  Relevance: Gauge the relevance of the idea to the input prompt on a scale of 1 to 5, where 5 denotes "Extremely Relevant" and 1 signifies "Extremely Irrelevant”.
+   6.5  Relevance: Gauge the relevance of the idea to the input prompt on a scale of 1 to 5, labeled by "Irrelevant", "Slightly Irrelevant", "Neutral", "Slightly Relevant", and "Relevant".
 
 7. Recommendations (Optional): You have the option to provide any additional recommendations or comments related to the generated research questions or the website's functionality.
 
