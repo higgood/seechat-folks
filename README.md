@@ -1,8 +1,8 @@
-#Guide to Using Idea-Factory Website: 
+# Guide to Using Idea-Factory Website: 
 
 Welcome to the Idea Factory website, designed to assist you in discovering novel research questions and ideas. This guide will walk you through the various components of the website and provide instructions on how to use them effectively.
 
-###User Interface Overview:
+### User Interface Overview:
 
 1. Settings: Choose the number of research papers to fetch from the database (default 20, up to 100) and the number of papers for the literature review and research questions generation (default 8, up to 25).
    
@@ -28,7 +28,7 @@ Welcome to the Idea Factory website, designed to assist you in discovering novel
 
 6. Recommendations (Optional): You have the option to provide any additional recommendations or comments related to the generated research questions or the website's functionality.
 
-###Prompt Guidelines:
+### Prompt Guidelines:
 
 1. To obtain the most accurate results, craft a concise prompt with a maximum of eight words.
 
