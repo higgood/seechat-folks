@@ -7,7 +7,7 @@ I want to:
 - 🎣 **Request a feature** => Create an issue [here](https://github.com/higgood/seechat-folks/issues/new/choose) and cross your fingers🤞.
 - ☝ **Ask a non-technical question** => Visit our discord community [here](TODO) and party 🥳.
 - 🤔 **Ask a technical question** => Please visit [our Q&A](TODO) first. If you can't find relevant questions, THEN create a new issue [here](https://github.com/higgood/seechat-folks/issues/new/choose). (Disclaimer: Our PM is easily triggered by repeated questions 😠.)
-- 📺 **Showcase your project** => Email wammar@holistic-intelligence.net if you want to showcase your project on our platform, especially if it's using Holistic Intelligence, for the Global Good, and/or based on the SeeChat platform. 🤝
+- 📺 **Showcase my project** => Email wammar@holistic-intelligence.net if you want to showcase your project on our platform, especially if it's using Holistic Intelligence, for the Global Good, and/or based on the SeeChat platform. 🤝
 
 ### Disclaimers
 - All the information you contribute to this repository, including github issues and code contributions are public and open. Please do not include sensitive, confidential or personal information, unless you want this information to be public and linked to you. 
