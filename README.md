@@ -6,7 +6,7 @@ I want to:
 - 🐛 **Report a bug** => Sorry, we hope you're taking good care of yourself 🤕! Create an issue [here](https://github.com/higgood/seechat-folks/issues/new/choose). (And yes, HIGG is also Canadian 🍁 ;))
 - 🎣 **Request a feature** => Create an issue [here](https://github.com/higgood/seechat-folks/issues/new/choose) and cross your fingers🤞.
 - ☝ **Ask a non-technical question** => Visit our discord community [here](TODO) and party 🥳.
-- 🤔 **Ask a technical question** => Please visit [our Q&A](TODO) first. If you can't find relevant questions, THEN create a new issue [here](https://github.com/higgood/seechat-folks/issues/new/choose). (Disclaimer: Our PM is easily triggered by repeated questions 😠.)
+- 🤔 **Ask a technical question** => Please find if you can find the answer in [existing issues](https://github.com/higgood/seechat-folks/issues) first. If you can't, THEN create a new issue [here](https://github.com/higgood/seechat-folks/issues/new/choose). (Disclaimer: Our PM is easily triggered by repeated questions 😠.)
 - 📺 **Showcase my project** => Email wammar@holistic-intelligence.net if you want to showcase your project on our platform, especially if it's using Holistic Intelligence, for the Global Good, and/or based on the SeeChat platform. 🤝
 
 ### Disclaimers
