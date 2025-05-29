@@ -1,13 +1,14 @@
-import requests
 import json
+import logging
+import os
 import re
 from datetime import datetime, timedelta
-import os
-import logging
+from typing import Dict, List, Optional, Set
+
+import requests
 from azure.ai.inference import ChatCompletionsClient
-from azure.core.credentials import AzureKeyCredential
 from azure.ai.inference.models import SystemMessage, UserMessage
-from typing import Optional, List, Set, Dict
+from azure.core.credentials import AzureKeyCredential
 from dotenv import load_dotenv
 
 # Configure logging
@@ -211,6 +212,87 @@ def fetch_medrxiv_by_date_range(start_date:Optional[str]=None, end_date:Optional
         return []
 # ------------------------------------- #
 
+def format_results_paragraph(text):
+   
+    sentences = re.split(r'(?<=[.?!])(?:\s+|$)|\n+', text)
+    # Use a fixed emoji or cycle through a few
+    emojis = ['- 📌', '- 🔹', '- ➤', '- ✅', '- 📝',  '- 📉']
+    print("DEBUG SENTENCES:", sentences) 
+    bullets = []
+    for i, sentence in enumerate(sentences):
+        if sentence:
+            emoji = emojis[i % len(emojis)]
+            bullets.append(f"{emoji} {sentence.strip()}")
+    
+    return "\n".join(bullets)
+
+
+def format_abstract_paragraphs(abstract_text):
+    section_labels = [
+        "Background", "Outcomes of interest", "Objectives", "Objective",
+        "Methods and Results", "Methods", "Results", "Conclusions", "Conclusion", "Findings"
+    ]
+    sentences = re.split(r'(?<=[.?!])\s+', abstract_text)
+    formatted = []
+    i = 0
+    n = len(sentences)
+    while i < n:
+        sentence = sentences[i]
+        # Check for section label at the start (with or without colon)
+        match_label = re.match(r'^(' + '|'.join(section_labels) + r')(:)?(\s*)(.*)', sentence, re.IGNORECASE)
+        if match_label:
+            label = match_label.group(1)
+            bolded = f"**{label}:**"
+            rest = match_label.group(4).strip()
+            formatted.append("")
+            formatted.append(bolded)
+            formatted.append("")
+            if label.lower() == "results":
+                # Collect all sentences after "Results:" until next label or end
+                results_block = []
+                if rest:
+                    results_block.append(rest)
+                i += 1
+                while i < n:
+                    next_sentence = sentences[i]
+                    next_label = re.match(r'^(' + '|'.join(section_labels) + r')(:)?(\s*)', next_sentence, re.IGNORECASE)
+                    if next_label:
+                        break
+                    results_block.append(next_sentence)
+                    i += 1
+                formatted.extend(format_results_paragraph(' '.join(results_block)).splitlines())
+                continue
+            else:
+                if rest:
+                    formatted.append(rest)
+            i += 1
+            continue
+
+        # Check for phrase ending with ':'
+        match_colon = re.match(r'^(.*?:)(\s*)(.*)', sentence)
+        match_upper = re.match(r'^([A-Z]{2,})(\s+)(.*)', sentence)
+        if match_colon:
+            bolded = f"**{match_colon.group(1)}**"
+            rest = match_colon.group(3).strip()
+           
+            formatted.append(bolded)
+            
+            if rest:
+                formatted.append(rest)
+        elif match_upper:
+            bolded = f"**{match_upper.group(1)}**"
+            rest = match_upper.group(3).strip()
+           
+            formatted.append(bolded)
+           
+            if rest:
+                formatted.append(rest)
+        else:
+            formatted.append(sentence)
+        i += 1
+    return '\n'.join(formatted)
+
+
 
 # ---------- CONSOLE APP ---------- #
 def main() -> None:
@@ -224,28 +306,14 @@ def main() -> None:
     for item in papers:
         title = item['title']
         abstract = item['abstract']
+        abstract_md = f"## 📄 Abstract\n\n{format_abstract_paragraphs(abstract)}"
         doi = item['doi']
         link = f"https://www.medrxiv.org/content/{item['doi']}v{item['version']}"
         date = item['date']
         category = item['category']
         authors = [name.strip() for name in item['authors'].split(';')]
         authors_list = "\n".join(f"- {author}" for author in authors)
-        summary = f"""# {title}
-
-## Abstract:
-{abstract}
-
-## Authors:
-{authors_list}
-
-#### Doi:
-[{doi}](https://doi.org/{doi})
-
-#### Published Date:
-{date}
-
-[View Article]({link})
-"""
+        summary = f"""# 🧪 {title}\n\n---\n\n{abstract_md}\n\n---\n\n## 👩‍🔬 Authors\n{authors_list}\n\n## 🧷 DOI\n[{doi}](https://doi.org/{doi})\n\n## 🗓️ Published Date\n**{date}**\n\n## 🔗 [View Full Article]({link})\n"""
         print('-' * 60)
         logging.info(f"Title: {title}")
         previous_count = len(processed_titles)
