@@ -30,7 +30,7 @@ This Python application fetches recent papers from [medRxiv](https://www.medrxiv
     ```  
 
 ## 📄 License
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project is licensed under the MIT License. See the [`LICENSE`](LICENSE) file for details.
 
 ## 📬 Contact
 For issues or inquiries, please contact the project maintainer via the repository's issue tracker.
