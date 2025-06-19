@@ -8,7 +8,6 @@ This Python application fetches recent papers from [medRxiv](https://www.medrxiv
 - Uses LLaMA 3 8B to extract concise problem statements
 - Automatically submits hypotheses to SeeChat
 - Saves processed titles to avoid duplication
--   
 
 ## 🛠 Setup Locally
 1. Clone or download the project repository.
