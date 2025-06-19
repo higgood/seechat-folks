@@ -1,0 +1,4 @@
+requests
+tqdm
+python-dotenv
+azure-ai-inference
