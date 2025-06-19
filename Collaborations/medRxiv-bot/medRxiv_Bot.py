@@ -433,8 +433,8 @@ def main() -> None:
     logging.info("Scientific Paper Hypothesis Assistant")
     logging.info("Fetching medRxiv papers...")
     # Offer period or date range
-    start_date_input = input("Enter start date (YYYY-MM-DD, default: 1 days ago): ").strip()
-    end_date_input = input("Enter end date (YYYY-MM-DD, default: today): ").strip()
+    start_date_input = None 
+    end_date_input = None 
    
     papers = fetch_medrxiv(start_date=start_date_input if start_date_input else None,
                            end_date=end_date_input if end_date_input else None)
