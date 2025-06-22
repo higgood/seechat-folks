@@ -1,0 +1,84 @@
+# Python-specific
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+dist/
+build/
+*.pytest_cache/
+.coverage
+coverage.xml
+*.cover
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Docker
+Dockerfile.local
+docker-compose.yml.local
+*.dockerignore
+
+# Azure-specific
+.azure/
+*.azurepipelines.yml
+azuresdk/
+*.azureauth
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+.DS_Store
+
+# OS-generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# GitHub Actions
+.github/workflows/*.local
+
+# Dependency directories
+node_modules/
+pip_cache/
+.pip/
+
+# Testing and coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Local configuration files
+config.local.yml
+local_settings.py
+
+# Miscellaneous
+*.bak
+*.backup
+*.tmp
+*.temp
+*~
