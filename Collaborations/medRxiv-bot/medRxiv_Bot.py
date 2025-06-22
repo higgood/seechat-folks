@@ -18,6 +18,7 @@ logging.getLogger("azure.core.pipeline.policies.http_logging_policy").setLevel(l
 
 # ---------------- CONFIG ---------------- #
 # Load environment variables from .env file
+
 load_dotenv()
 API_KEY = os.getenv("SEECHAT_API_KEY")
 SEMANTIC_SCHOLAR_API_KEY = os.getenv("SEMANTIC_SCHOLAR_API_KEY")

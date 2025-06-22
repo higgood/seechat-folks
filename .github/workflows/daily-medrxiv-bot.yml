@@ -1,0 +1,34 @@
+name: Daily MedRxiv Bot
+
+on:
+  schedule:
+    - cron: '0 0 * * *' 
+  workflow_dispatch: #
+
+jobs:
+  run-idea-generator:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Log in to Azure
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      # Restart the Azure Container Instance
+      - name: Restart Container
+        run: |
+          az container restart \
+            --resource-group myResourceGroup \
+            --name idea-generator-container
+
+      # Optionally, check container logs
+      - name: Check Container Logs
+        run: |
+          az container logs \
+            --resource-group myResourceGroup \
+            --name idea-generator-container
